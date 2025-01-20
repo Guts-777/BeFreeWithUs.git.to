@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+</head>
+
+<body>
+    <header class="bg-dark text-white text-center py-4">
+        <h1>contact Freedom creators</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link text-white" href="project page.html">Go back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="custom-button">Send Message</button>
+        </form>
+    </div>
+    <br><br><br><br><br>
+    <footer>
+        <div>
+
+            <footer>
+                <p>&copy; 2023 ESTN Made by Anas Mohoubi</p>
+                <h2 id="CONTACTS" class="bg-light p-4 rounded shadow-sm clickable">Contact</h2>
+                <p>
+                    <a href="mailto:ANAS.MOHOUBI.ESTN24@ump.ac.ma">ANAS.MOHOUBI.ESTN24@ump.ac.ma</a><br>
+                </p>
+                <div class="footer-icons">
+                </div>
+            </footer>
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+
+
+                    localStorage.setItem('contactName', name);
+                    localStorage.setItem('contactEmail', email);
+                    localStorage.setItem('contactMessage', message);
+
+                    this.reset();
+
+                    alert('Your message has been saved!');
+                });
+            </script>
+</body>
+
+</html>
